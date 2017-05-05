@@ -1,0 +1,12 @@
+<div class='col-md-8'>
+  <h1>Remind me to: </h1>
+</div>
+<%= form_for @item do |i| %>
+  <div class='col-md-8'>
+    <div class='form-group'>
+      <%= i.text_area :body, rows:10, class: 'form-control' %>
+    </div>
+    <%= i.submit "Save", class: 'btn btn-primary' %>
+    <%= link_to "Cancel", authenticated_index_path, class: 'btn btn-danger' %>
+  </div>
+<% end %>
