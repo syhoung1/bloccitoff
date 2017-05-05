@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='panel'>
   <div class='page-nav'>
     <%= link_to "New to-do", new_item_path %>
     <div class='user-link pull-right'>
@@ -7,12 +7,10 @@
   </div>
 </div>
 
-<div class='container'>
-  <div class='row'>
-    <% @items.each do |item| %>
-      <div class='col-md-3'>
-        <%= item.body %>
-      </div>
-    <% end %>
+<% @items.each do |item| %>
+  <div class='col-md-3 panel' style="min-height: 80px; max-height: 80px">
+    <div class='panel-body'>
+      <%= item.body %>
+    </div>
   </div>
-</div>
+<% end %>
