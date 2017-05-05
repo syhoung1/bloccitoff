@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
+  get 'users_controller/show'
+
   devise_for :users
   
   get 'items/index'

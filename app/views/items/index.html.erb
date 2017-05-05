@@ -1,6 +1,12 @@
-<div class='page-nav'>
-  <%= link_to "New to-do", new_item_path %>
+<div class='container'>
+  <div class='page-nav'>
+    <%= link_to "New to-do", new_item_path %>
+    <div class='user-link pull-right'>
+      <%= link_to "My profile", users_show_path %>
+    </div>
+  </div>
 </div>
+
 <div class='container'>
   <div class='row'>
     <% @items.each do |item| %>
