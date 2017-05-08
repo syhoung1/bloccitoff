@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get 'items/index'
   get 'welcome/about'
   get 'welcome/index'
-
-  resources :items, only: [:new, :create, :edit]
+  
+  resources :items, only: [:new, :create, :edit, :destroy]
   
   authenticated :user do
     root 'items#index', as: :authenticated_index

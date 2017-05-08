@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  
+  <div class='col-md-12'>
+    <div class='page-nav'>
+      <div class='user-link pull-right'>
+        <%= link_to "My profile", users_show_path %>
+      </div>
+    </div>
+  </div>
+  <%= yield %>
+  
 </body>
 </html>

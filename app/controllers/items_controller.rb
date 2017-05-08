@@ -18,6 +18,16 @@ class ItemsController < ApplicationController
     end
   end
   
+  def destroy
+    @item = current_user.items.find(params[:id])
+    
+    if @item.destroy
+      redirect_to authenticated_index_path
+    else
+      flash[:alert] = "There was an error removing this item"
+    end
+  end
+  
   def items_param
     params.require(:item).permit(:body)
   end
