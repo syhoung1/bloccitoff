@@ -22,3 +22,23 @@
 .alert-notice {
  @extend .alert-warning;
 }
+
+.box {
+  display: table;
+  min-height: 150px;
+  max-height: 150px;
+  width: 25%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.box-body {
+  display: table-row;
+  height: 100%
+}
+
+.box-footer {
+ border: 0;
+ text-align: center;
+ width:100%
+}

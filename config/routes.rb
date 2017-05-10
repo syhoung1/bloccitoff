@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-  get 'users/show'
-
-  get 'users_controller/show'
-
   devise_for :users
   
   get 'items/index'
   get 'welcome/about'
   get 'welcome/index'
   
+  resources :users, only: [:show]
   resources :items, only: [:new, :create, :edit, :destroy]
   
   authenticated :user do

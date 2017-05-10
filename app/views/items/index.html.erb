@@ -1,13 +1,17 @@
+<div class="page-nav">
+  <%= link_to "Add a reminder", new_item_path %>
+</div>
+
 <% @items.each do |item| %>
-  <div class='panel' style='display: table; min-height: 150px; max-height: 150px; width: 25%; box-sizing: border-box; float: left'>
+  <div class='panel box'>
     <div class='panel-header'>
       <h4>Since <%= distance_of_time_in_words(Time.now, item.created_at) %> ago.</h4>
     </div>
-    <div class='panel-body' style='display: table-row; height: 100%'>
+    <div class='panel-body box-body'>
       <%= item.body %>
     </div>
-    <div class='panel-footer' style='border: 0; text-align: center; width:100%'>
-      <%= link_to "Finished", item_path(item.user_id, item), method: :delete %>
+    <div class='panel-footer box-footer'>
+      <%= link_to "Finished", item_path(item), method: :delete %>
     </div>
   </div>
 <% end %>
