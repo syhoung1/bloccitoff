@@ -1,5 +1,9 @@
-<% if @user %>
+<% if User.find(params[:id]) == @user %>
   <div>
     <h2>Hello, <%= @user.name %></h2>
+  </div>
+<% else %>
+  <div>
+    <h3>This profile is private! <%= link_to "Click here", welcome_index_path %> to go back to the home page.</h3>
   </div>
 <% end %>
